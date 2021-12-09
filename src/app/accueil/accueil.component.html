@@ -3,10 +3,12 @@
     <img src="../../assets/img/plango.jpg"><br>
 
     <div class="container-voyage">
+        <div *ngIf="complete">{{ value }}</div>
 
     </div>
 
     <button mat-fab>
     	<mat-icon>add_circle</mat-icon>
+		
     </button>
 </div>

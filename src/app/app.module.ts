@@ -10,11 +10,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { AccueilComponent } from './accueil/accueil.component';
+import { TravelService } from './services/travel-service/travel-service.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
 	declarations: [
 		AppComponent,
-  AccueilComponent
+  AccueilComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -25,9 +27,10 @@ import { AccueilComponent } from './accueil/accueil.component';
 		FormsModule, 
 		ReactiveFormsModule,
 		MatIconModule,
-		MatButtonModule
+		MatButtonModule,
+		HttpClientModule
 	],
-	providers: [],
+	providers: [TravelService],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }
