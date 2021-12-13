@@ -15,21 +15,41 @@ img {
     }
 }
 
+div.loading>div>span {
+    background-color: silver;
+    padding-inline: 100px;
+    height: 20px;
+}
 
-/* 
-img {
-    width: 80%;
-    margin-top: 50px;
-    margin-bottom: 25px;
-} */
+.travel_list .loading {
+    background-color: grey;
+}
+
+mat-icon.loading {
+    color: silver;
+}
 
 .container>button {
     margin-top: 20px;
     background-color: #c75411;
 }
 
+:host ::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
+    stroke: grey;
+}
+
+.loading-indicator {
+    display: flex;
+    justify-content: center;
+}
+
+.container>button.loading {
+    background-color: grey;
+    pointer-events: none;
+}
+
 .container-voyage {
-    /* background-color: red; */
     height: 65vh;
     width: 85vw;
     margin: auto;

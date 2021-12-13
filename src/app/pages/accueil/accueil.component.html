@@ -1,6 +1,6 @@
 <div class="container">
 
-    <img src="../../assets/img/plango.jpg"><br>
+    <img src="../../assets/img/plango.webp"><br>
 
     <div class="container-voyage">
         <div *ngIf="displayState.loaded" class="travel_list">
@@ -11,14 +11,27 @@
                 <mat-icon (click)="share()">share</mat-icon>
             </div>
         </div>
-        <div *ngIf="displayState.loading">
-            <mat-spinner></mat-spinner>
+        <div *ngIf="displayState.loading" class="travel_list loading">
+            <div class="travel_item loading">
+                <div><span></span><br>
+                    <span></span>
+                </div>
+                <mat-icon class="loading">share</mat-icon>
+            </div>
+            <div class="travel_item loading">
+                <div><span></span><br>
+                    <span></span>
+                </div>
+                <mat-icon class="loading">share</mat-icon>
+            </div>
+            <div class="loading-indicator">
+                <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+            </div>
         </div>
 
     </div>
 
-    <button mat-fab>
-    	<mat-icon (click)="add()">add_circle</mat-icon>
-		
+    <button mat-fab [ngClass]="{'loading':displayState.loading}">
+    	<mat-icon [ngClass]="{'loading':displayState.loading}"  (click)="displayState.loading ||add()">add_circle</mat-icon>
     </button>
 </div>

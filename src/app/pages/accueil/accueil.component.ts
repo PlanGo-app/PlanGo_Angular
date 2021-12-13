@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { Travel } from 'src/model/travel';
 import { TravelService } from '../../services/travel-service/travel-service.component';
 import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
@@ -52,8 +52,10 @@ export class AccueilComponent implements OnInit {
 		console.log("SHARE");
 	}
 
+
 	add(){
-		const bottomSheetRef = this._bottomSheet.open(BottomSheetComponent);
+		this._bottomSheet.open(BottomSheetComponent, {data: this._bottomSheet});
 	}
+
 
 }
