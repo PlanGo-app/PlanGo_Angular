@@ -1,0 +1,10 @@
+{
+    "/plango-api/*": {
+        "target": "https://plango-api.herokuapp.com",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug",
+        "pathRewrite": { "^/plango-api": "" },
+        "headers": { "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJQbGFuZ29Bbmd1bGFyIiwiaWF0IjoxNjM5MDM3NzcyfQ.MDPiiiMXyNlUQ4tIfOBEUUgtMTTjMQD06uBBs6F6WgeV1fhZ_VHHFv4YcIoSp2IIoslM8YRJovp8UqHDJRpldQ" }
+    }
+}
