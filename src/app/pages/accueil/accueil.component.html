@@ -1,0 +1,24 @@
+<div class="container">
+
+    <img src="../../assets/img/plango.jpg"><br>
+
+    <div class="container-voyage">
+        <div *ngIf="displayState.loaded" class="travel_list">
+            <div *ngFor="let travel of travels" class="travel_item">
+                <div><span>{{travel.city}} ( {{travel.country}} )</span><br>
+                    <span>{{travel.dateStart | date: 'dd/MM/yyyy'}} -> {{travel.dateEnd | date: 'dd/MM/yyyy'}}</span>
+                </div>
+                <mat-icon (click)="share()">share</mat-icon>
+            </div>
+        </div>
+        <div *ngIf="displayState.loading">
+            <mat-spinner></mat-spinner>
+        </div>
+
+    </div>
+
+    <button mat-fab>
+    	<mat-icon (click)="add()">add_circle</mat-icon>
+		
+    </button>
+</div>

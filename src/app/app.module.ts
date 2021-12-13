@@ -9,14 +9,18 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-import { AccueilComponent } from './accueil/accueil.component';
+import { AccueilComponent } from './pages/accueil/accueil.component';
 import { TravelService } from './services/travel-service/travel-service.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { BottomSheetComponent } from './pages/accueil/bottom-sheet/bottom-sheet.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
   AccueilComponent,
+  BottomSheetComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -28,6 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
 		ReactiveFormsModule,
 		MatIconModule,
 		MatButtonModule,
+		MatBottomSheetModule,
+		MatProgressSpinnerModule,
 		HttpClientModule
 	],
 	providers: [TravelService],

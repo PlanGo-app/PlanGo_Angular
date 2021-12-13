@@ -1,6 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { Travel, TravelResponse } from 'src/model/travel';
+import { map, mergeMap, take } from 'rxjs/operators';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Injectable({ providedIn: 'root' })
 
@@ -8,29 +11,14 @@ export class TravelService {
 
   constructor(private http: HttpClient) { }
   
-  private baseUrl: string = "https://plango-api.herokuapp.com";
-  private getTravelUrl: string = "/user/travels/";
+  private baseUrl: string = "/plango-api/";
+  private getTravelUrl: string = "user/travels/";
   private createTravelUrl: string ="/travel";
-  private token: string = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJQbGFuZ29Bbmd1bGFyIiwiaWF0IjoxNjM5MDM3NzcyfQ.MDPiiiMXyNlUQ4tIfOBEUUgtMTTjMQD06uBBs6F6WgeV1fhZ_VHHFv4YcIoSp2IIoslM8YRJovp8UqHDJRpldQ";
-
+  private token: string = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJQbGFuZ29Bbmd1bGFyIiwiaWF0IjoxNjM5MTQ4OTQxfQ.sSondsM8XuMajf6mpLnHPsFwgt9sJQqugKQ0Or_1Kp2meGkAV3Bq_jREjGI6K2QjsTNEdV_ryfLCQ2-Ldw7e2Q"
   
-  getTravels(): Observable<any>{
-	let headers = new HttpHeaders({
-		"Authorization": `Bearer ${this.token}`,
-		'Content-Type': 'application/json',
-		'Access-Control-Allow-Origin': '*',
-		'Access-Control-Allow-Credentials': 'true',
-		'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
-		'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
-	});
-	console.log(headers);
-
-	return this.http.get(this.baseUrl+this.getTravelUrl, {headers: headers})    .pipe(
-		(resultat) => {
-			console.log("Résultat de la requête : ",resultat);
-			return resultat;	
-		}
-	  );
+  getTravels(): Observable<Travel[]>{
+	return this.http.get<TravelResponse>(this.baseUrl+this.getTravelUrl).pipe(
+		map((response) => response.travels));	
   }
 
 

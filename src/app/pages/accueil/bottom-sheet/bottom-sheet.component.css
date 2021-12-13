@@ -1,0 +1,20 @@
+button {
+    background-color: #0f2d01dd;
+    color: white;
+    width: 100px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.travel_interraction {
+    display: flex;
+    justify-content: space-around;
+}
+
+.travel_interraction>button {}
+
+.dismiss_bottom_sheet {
+    display: flex;
+    justify-content: center;
+}

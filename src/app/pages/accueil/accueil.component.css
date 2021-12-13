@@ -35,3 +35,26 @@ img {
     margin: auto;
     border: 1px solid #0f2d01;
 }
+
+.travel_item {
+    display: flex;
+    background-color: #0f2d01dd;
+    color: white;
+    padding: 10px;
+    border-bottom: 2px solid black;
+    justify-content: space-between;
+}
+
+.travel_item>div {
+    margin: auto;
+}
+
+.travel_item:last-of-type {
+    border-bottom: none;
+}
+
+.travel_item mat-icon {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 10px;
+}
