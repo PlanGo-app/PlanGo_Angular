@@ -8,5 +8,5 @@ export interface Travel{
 	country:string;
 	dateStart:Date;
 	dateEnd:Date;
-	invationCode:string;
+	invitationCode:string;
 }

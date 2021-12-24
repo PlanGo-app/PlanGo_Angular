@@ -1,5 +1,7 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { Router } from '@angular/router';
 import { Travel } from 'src/model/travel';
 import { TravelService } from '../../services/travel-service/travel-service.component';
 import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
@@ -13,7 +15,7 @@ export class AccueilComponent implements OnInit {
 	travels: Travel[] = [];
 	displayState: any;
 
-	constructor(private travelService: TravelService, private _bottomSheet: MatBottomSheet) {}
+	constructor(private travelService: TravelService, private _bottomSheet: MatBottomSheet, private router: Router) {}
 
 	ngOnInit(): void {
 		this.displayState = {
@@ -42,7 +44,7 @@ export class AccueilComponent implements OnInit {
 				this.displayState = {
 					loading: false,
 					loaded: false,
-					errorMessage: err?err.toString():"Error"
+					errorMessage: err?err.toString():"Une erreur est survenue veuillez réessayer plus tard"
 				}
 			}
 		});
@@ -56,6 +58,5 @@ export class AccueilComponent implements OnInit {
 	add(){
 		this._bottomSheet.open(BottomSheetComponent, {data: this._bottomSheet});
 	}
-
 
 }

@@ -3,13 +3,17 @@
     <img src="../../assets/img/plango.webp"><br>
 
     <div class="container-voyage">
-        <div *ngIf="displayState.loaded" class="travel_list">
+        <div *ngIf="displayState.loaded && travels.length!=0" class="travel_list">
             <div *ngFor="let travel of travels" class="travel_item">
                 <div><span>{{travel.city}} ( {{travel.country}} )</span><br>
                     <span>{{travel.dateStart | date: 'dd/MM/yyyy'}} -> {{travel.dateEnd | date: 'dd/MM/yyyy'}}</span>
                 </div>
-                <mat-icon (click)="share()">share</mat-icon>
+                <mat-icon (click)="share()" [routerLink]="['/share', travel.invitationCode]">share</mat-icon>
             </div>
+
+        </div>
+        <div *ngIf="displayState.loaded  && travels.length==0" class="travel_list">
+            <span>Vous ne possédez pas de voyage</span>
         </div>
         <div *ngIf="displayState.loading" class="travel_list loading">
             <div class="travel_item loading">

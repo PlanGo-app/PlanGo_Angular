@@ -3,6 +3,11 @@
     width: 100%;
 }
 
+.container>button {
+    margin-top: 20px;
+    background-color: #c75411;
+}
+
 img {
     width: 20%;
     margin-top: 50px;
@@ -29,11 +34,6 @@ mat-icon.loading {
     color: silver;
 }
 
-.container>button {
-    margin-top: 20px;
-    background-color: #c75411;
-}
-
 :host ::ng-deep .mat-progress-spinner circle,
 .mat-spinner circle {
     stroke: grey;
@@ -51,7 +51,7 @@ mat-icon.loading {
 
 .container-voyage {
     height: 65vh;
-    width: 85vw;
+    width: 85%;
     margin: auto;
     border: 1px solid #0f2d01;
 }

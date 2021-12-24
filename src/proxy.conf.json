@@ -5,6 +5,6 @@
         "changeOrigin": true,
         "logLevel": "debug",
         "pathRewrite": { "^/plango-api": "" },
-        "headers": { "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJQbGFuZ29Bbmd1bGFyIiwiaWF0IjoxNjM5MDM3NzcyfQ.MDPiiiMXyNlUQ4tIfOBEUUgtMTTjMQD06uBBs6F6WgeV1fhZ_VHHFv4YcIoSp2IIoslM8YRJovp8UqHDJRpldQ" }
+        "headers": { "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwbGFuZ29Bbmd1bGFyIiwiaWF0IjoxNjQwMTc1Nzc5fQ.Zsk0q9Hqty4-ND-IkmMrrdOXZsNFjUItAf-ye1eqDvMfdYELlIoikLwmVF1xudX9vc8Xy0FOHkN0gWepqC86nw" }
     }
 }
