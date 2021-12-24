@@ -66,4 +66,5 @@ mat-icon.loading {
     margin-top: auto;
     margin-bottom: auto;
     margin-right: 10px;
+    cursor: pointer;
 }

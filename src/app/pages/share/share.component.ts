@@ -9,6 +9,7 @@ import { Clipboard } from '@angular/cdk/clipboard';
 })
 export class ShareComponent implements OnInit {
 	invitationCode: string = "";
+  copied: boolean = false;
 
   constructor(private activatedRoute: ActivatedRoute, private clipboard: Clipboard) { 
 
@@ -21,6 +22,7 @@ export class ShareComponent implements OnInit {
 
   copyInvitationCode(){
 	  this.clipboard.copy(this.invitationCode);
+    this.copied = true;
   }
 
   
