@@ -1,5 +1,6 @@
+@import url(../../../../assets/css/styles.scss);
 button {
-    background-color: #0f2d01dd;
+    background-color: var(--color-primary);
     color: white;
     width: 100px;
     padding: 5px;

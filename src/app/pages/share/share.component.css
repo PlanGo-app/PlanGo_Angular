@@ -1,0 +1,51 @@
+@import url(../../../assets/css/styles.scss);
+.flex-container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    color: var(--color-secondary);
+}
+
+.copy-code-field {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.copy-code-field input:nth-child(1) {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.copy-code-field input:nth-child(2) {
+    background-image: url('../../../assets/img/copy.png');
+    background-repeat: no-repeat;
+    background-size: auto 80%;
+    background-position: center;
+    padding-left: 18px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.copy-code-field input {
+    border: none;
+    background-color: lightgray;
+    padding: 8px;
+}
+
+.flex-container .container-buttons {
+    display: flex;
+    flex-grow: 1;
+    align-items: flex-end;
+}
+
+.container-buttons button {
+    width: 50%;
+    height: 3em;
+    margin: 1em;
+}

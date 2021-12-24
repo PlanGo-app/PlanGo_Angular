@@ -1,5 +1,17 @@
-<p>
-    Le code d'invitation : {{invitationCode}}
-</p>
+<div class="flex-container">
+    <img src="../../assets/img/plango.webp"><br>
 
-<button (click)="copyInvitationCode()">Copier</button>
+    <!-- <div>
+        Le code d'invitation : {{invitationCode}}
+    </div> -->
+    <label for="copy-field">Votre code plango :</label>
+    <div class="copy-code-field">
+        <input name="copy-field" type="text" disabled [value]="invitationCode" />
+        <input type="button" (click)="copyInvitationCode()" />
+    </div>
+    <!-- <button (click)="copyInvitationCode()">Copier</button> -->
+    <div class="container-buttons primary-buttons">
+        <button>Annuler</button>
+        <button>Envoyer le lien</button>
+    </div>
+</div>

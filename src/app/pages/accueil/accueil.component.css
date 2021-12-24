@@ -1,3 +1,4 @@
+@import url(../../../assets/css/styles.scss);
 .container {
     text-align: center;
     width: 100%;
@@ -5,19 +6,7 @@
 
 .container>button {
     margin-top: 20px;
-    background-color: #c75411;
-}
-
-img {
-    width: 20%;
-    margin-top: 50px;
-    margin-bottom: 25px;
-}
-
-@media screen and (max-width: 700px) {
-    img {
-        width: 80%;
-    }
+    background-color: var(--color-secondary);
 }
 
 div.loading>div>span {
@@ -53,12 +42,12 @@ mat-icon.loading {
     height: 65vh;
     width: 85%;
     margin: auto;
-    border: 1px solid #0f2d01;
+    border: 1px solid var(--color-primary);
 }
 
 .travel_item {
     display: flex;
-    background-color: #0f2d01dd;
+    background-color: var(--color-primary);
     color: white;
     padding: 10px;
     border-bottom: 2px solid black;

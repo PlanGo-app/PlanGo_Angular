@@ -1,0 +1,33 @@
+:root {
+    --color-primary: #0f2d01;
+    --color-secondary: #c75411;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.primary-buttons button {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+img {
+    width: 20%;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+@media screen and (max-width: 700px) {
+    img {
+        width: 80%;
+    }
+}
