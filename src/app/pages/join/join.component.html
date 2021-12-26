@@ -2,10 +2,11 @@
     <img src="../../assets/img/plango.webp"><br>
     <label for="code-field">Code du voyage à rejoindre :</label>
     <div class="code-field">
-        <input name="code-field" type="text" [value]="" />
+        <input name="code-field" type="text" [(ngModel)]="invitationCode" />
     </div>
+    <div *ngIf="errorMsg" class="errorMsg">{{errorMsg}}</div>
     <div class="container-buttons primary-buttons">
         <button [routerLink]="['/']">Annuler</button>
-        <button [routerLink]="['/']">Rejoindre</button>
+        <button (click)="join()">Rejoindre</button>
     </div>
 </div>

@@ -9,16 +9,25 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 export class TravelService {
 
-  constructor(private http: HttpClient) { }
-  
-  private baseUrl: string = "/plango-api/";
-  private getTravelUrl: string = "user/travels/";
-  private token: string = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJQbGFuZ29Bbmd1bGFyIiwiaWF0IjoxNjM5MTQ4OTQxfQ.sSondsM8XuMajf6mpLnHPsFwgt9sJQqugKQ0Or_1Kp2meGkAV3Bq_jREjGI6K2QjsTNEdV_ryfLCQ2-Ldw7e2Q"
-  
-  getTravels(): Observable<Travel[]>{
-	return this.http.get<TravelResponse>(this.baseUrl+this.getTravelUrl).pipe(
-		map((response) => response.travels));	
-  }
+	constructor(private http: HttpClient) { }
+
+	private baseUrl: string = "/plango-api/";
+	private getTravelUrl: string = "user/travels/";
+	private joinTravelUrl: string = "travel/invitation?code=";
+	private token: string = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJQbGFuZ29Bbmd1bGFyIiwiaWF0IjoxNjM5MTQ4OTQxfQ.sSondsM8XuMajf6mpLnHPsFwgt9sJQqugKQ0Or_1Kp2meGkAV3Bq_jREjGI6K2QjsTNEdV_ryfLCQ2-Ldw7e2Q"
+
+	getTravels(): Observable<Travel[]> {
+		return this.http.get<TravelResponse>(this.baseUrl + this.getTravelUrl).pipe(
+			map((response) => response.travels));
+	}
+
+	joinTravels(code: string) {
+		return this.http.get(this.baseUrl + this.joinTravelUrl + code).pipe(response => {
+
+			console.log(response)
+			return response;
+		});
+	}
 
 
 
