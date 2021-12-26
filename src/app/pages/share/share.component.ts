@@ -18,7 +18,9 @@ export class ShareComponent implements OnInit {
 		});
   }
 
-  ngOnInit(): void {  }
+  ngOnInit(): void {  
+	  
+  }
 
   copyInvitationCode(){
 	  this.clipboard.copy(this.invitationCode);

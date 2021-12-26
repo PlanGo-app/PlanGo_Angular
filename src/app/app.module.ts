@@ -19,6 +19,7 @@ import { BottomSheetComponent } from './pages/accueil/bottom-sheet/bottom-sheet.
 import { SwipeAngularListModule } from 'swipe-angular-list';
 import { ShareComponent } from './pages/share/share.component';
 import {ClipboardModule} from '@angular/cdk/clipboard';
+import { JoinComponent } from './pages/join/join.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import {ClipboardModule} from '@angular/cdk/clipboard';
 		AccueilComponent,
 		BottomSheetComponent,
 		ShareComponent,
+  JoinComponent,
 	],
 	imports: [
 		BrowserModule,

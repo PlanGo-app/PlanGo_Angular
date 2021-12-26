@@ -14,7 +14,7 @@ export class BottomSheetComponent implements OnInit {
 	}
 
 	join() {
-		console.log("join");
+		this.data.dismiss();
 	}
 
 	create() {
