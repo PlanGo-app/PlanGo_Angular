@@ -1,7 +1,5 @@
-import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
-import { Router } from '@angular/router';
 import { Travel } from 'src/model/travel';
 import { TravelService } from '../../services/travel-service/travel-service.component';
 import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
@@ -15,7 +13,7 @@ export class AccueilComponent implements OnInit {
 	travels: Travel[] = [];
 	displayState: any;
 
-	constructor(private travelService: TravelService, private _bottomSheet: MatBottomSheet, private router: Router) {}
+	constructor(private travelService: TravelService, private _bottomSheet: MatBottomSheet) {}
 
 	ngOnInit(): void {
 		this.displayState = {
