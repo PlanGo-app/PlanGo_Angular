@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { LocalTravelService } from 'src/app/services/travel-service/local-travel-service.component';
 import { Travel } from 'src/model/travel';
 import { TravelService } from '../../services/travel-service/travel-service.component';
@@ -15,7 +16,7 @@ export class AccueilComponent implements OnInit {
 	travels: Travel[] = [];
 	displayState: any;
 
-	constructor(private travelService: TravelService, private localTravelService: LocalTravelService, private _bottomSheet: MatBottomSheet) { }
+	constructor(private travelService: TravelService, private localTravelService: LocalTravelService, private _bottomSheet: MatBottomSheet,private _snackBar: MatSnackBar) { }
 
 	ngOnInit(): void {
 		this.displayState = {
@@ -74,7 +75,16 @@ export class AccueilComponent implements OnInit {
 				this.travels = this.localTravelService.deleteTravel(travel);
 			},
 			error:(err:HttpErrorResponse) =>{
-				console.log(err);
+				var errMsg="";
+				switch(err.status){
+					case 403:
+						errMsg = 'Impossible de supprimer votre voyage';
+						break;
+					case 404:
+						errMsg = 'Le voyage que vous essayer de supprimer n\'existe pas';
+						break;
+				}
+				this._snackBar.open(errMsg,"Ok", {duration: 3000, panelClass: ['red-snackbar']});
 			},
 		});
 	

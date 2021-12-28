@@ -20,6 +20,7 @@ import { SwipeAngularListModule } from 'swipe-angular-list';
 import { ShareComponent } from './pages/share/share.component';
 import {ClipboardModule} from '@angular/cdk/clipboard';
 import { JoinComponent } from './pages/join/join.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { JoinComponent } from './pages/join/join.component';
 		HttpClientModule,
 		HammerModule,
 		SwipeAngularListModule,
-		ClipboardModule
+		ClipboardModule,
+		MatSnackBarModule
 	],
 	providers: [TravelService],
 	bootstrap: [AppComponent]
