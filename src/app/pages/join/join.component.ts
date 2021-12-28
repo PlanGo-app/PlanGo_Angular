@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LocalTravelService } from 'src/app/services/travel-service/local-travel-service.component';
 import { TravelService } from 'src/app/services/travel-service/travel-service.component';
 
 @Component({
@@ -11,27 +12,29 @@ import { TravelService } from 'src/app/services/travel-service/travel-service.co
 export class JoinComponent implements OnInit {
 	invitationCode: string = "";
 	errorMsg: string = "";
-	constructor(private travelService: TravelService, private router: Router) { }
+	constructor(private travelService: TravelService, private localTravelService: LocalTravelService, private router: Router) { }
 
 	ngOnInit(): void {
 	}
 
 
 	join() {
-		console.log(this.invitationCode);
-		this.travelService.joinTravels(this.invitationCode).subscribe({	
-			   next: (data) => {
-					console.log(data);
-					this.router.navigateByUrl("/");
-				},
-				error: (err: HttpErrorResponse) => {
-					console.log(err.status);
-					
-					this.errorMsg=err.message;
+		this.travelService.joinTravels(this.invitationCode).subscribe({
+			next: (data) => {
+				console.log(data);
+				this.localTravelService.addTravel(data);
+				this.router.navigateByUrl("/");
+			},
+			error: (err: HttpErrorResponse) => {
+				switch (err.status) {
+					case 404:
+						this.errorMsg = "Le code de voyage n'existe pas";
+						break;
+					case 409:
+						this.errorMsg = "Vous êtes déjà dans ce voyage";
+						break;
 				}
-			});
-		
-
+			}
+		});
 	}
-
 }

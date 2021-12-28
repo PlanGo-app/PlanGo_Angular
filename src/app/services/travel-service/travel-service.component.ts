@@ -21,12 +21,8 @@ export class TravelService {
 			map((response) => response.travels));
 	}
 
-	joinTravels(code: string) {
-		return this.http.get(this.baseUrl + this.joinTravelUrl + code).pipe(response => {
-
-			console.log(response)
-			return response;
-		});
+	joinTravels(code: string): Observable<Travel>{
+		return this.http.post<Travel>(this.baseUrl + this.joinTravelUrl + code,"");
 	}
 
 
