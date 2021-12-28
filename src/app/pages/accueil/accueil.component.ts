@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { LocalTravelService } from 'src/app/services/travel-service/local-travel-service.component';
@@ -46,7 +47,7 @@ export class AccueilComponent implements OnInit {
 						errorMessage: undefined
 					}
 				},
-				error: (err: object) => {
+				error: (err: HttpErrorResponse) => {
 					this.displayState = {
 						loading: false,
 						loaded: false,
@@ -65,6 +66,18 @@ export class AccueilComponent implements OnInit {
 
 	add() {
 		this._bottomSheet.open(BottomSheetComponent, { data: this._bottomSheet });
+	}
+
+	delete(travel:Travel) {
+		this.travelService.deleteTravel(travel.id).subscribe({
+			next:() =>{
+				this.travels = this.localTravelService.deleteTravel(travel);
+			},
+			error:(err:HttpErrorResponse) =>{
+				console.log(err);
+			},
+		});
+	
 	}
 
 }

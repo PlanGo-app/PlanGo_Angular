@@ -19,7 +19,7 @@ export class JoinComponent implements OnInit {
 
 
 	join() {
-		this.travelService.joinTravels(this.invitationCode).subscribe({
+		this.travelService.joinTravel(this.invitationCode).subscribe({
 			next: (data) => {
 				console.log(data);
 				this.localTravelService.addTravel(data);

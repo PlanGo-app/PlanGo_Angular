@@ -8,6 +8,7 @@
                 <div><span>{{travel.city}} ( {{travel.country}} )</span><br>
                     <span>{{travel.dateStart | date: 'dd/MM/yyyy'}} -> {{travel.dateEnd | date: 'dd/MM/yyyy'}}</span>
                 </div>
+                <mat-icon (click)="delete(travel)">delete</mat-icon>
                 <mat-icon (click)="share()" [routerLink]="['/share', travel.invitationCode]">share</mat-icon>
             </div>
 
