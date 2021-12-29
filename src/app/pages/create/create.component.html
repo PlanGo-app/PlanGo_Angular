@@ -1,6 +1,20 @@
 <div class="flex-container">
     <img src="../../assets/img/plango.webp"><br>
-    <label for="code-field" title="Pays">Pays :</label>
+    <div style="display: inline-grid;">
+        <form [formGroup]="formCreate">
+            <input type="text" formControlName="country">
+            <input type="text" formControlName="city">
+            <input type="text" formControlName="dateStart">
+            <input type="text" formControlName="dateEnd">
+        </form>
+    </div>
+
+    <div class="container-buttons primary-buttons">
+        <button form="formCreate" [routerLink]="['/']" title="Annuler, retour à la page principale">Annuler</button>
+        <button (click)="createTravel()" title="Créer le voyage">Créer </button>
+    </div>
+
+    <!-- <label for="code-field" title="Pays">Pays :</label>
     <div class="code-field">
         <input name="code-field" type="text" [(ngModel)]="country" />
     </div>
@@ -15,10 +29,7 @@
     <label for="code-field" title="Date de fin">Date de fin :</label>
     <div class="code-field">
         <input name="code-field" type="date" [(ngModel)]="dateEnd" [min]="dateStart" />
-    </div>
+    </div> -->
     <!-- <div *ngIf="errorMsg" class="errorMsg">{{errorMsg}}</div> -->
-    <div class="container-buttons primary-buttons">
-        <button [routerLink]="['/']" title="Annuler, retour à la page principale">Annuler</button>
-        <button (click)="createTravel()" title="Créer le voyage">Créer </button>
-    </div>
+
 </div>

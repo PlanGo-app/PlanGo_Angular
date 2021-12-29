@@ -10,6 +10,11 @@ label {
     justify-content: center;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+}
+
 .code-field input {
     width: 60%;
     border-radius: 4px;

@@ -35,6 +35,10 @@ body {
     margin: 1em;
 }
 
+input.ng-touched.ng-invalid {
+    border: 1px solid red;
+}
+
 .container-buttons {
     display: flex;
     flex-grow: 1;
