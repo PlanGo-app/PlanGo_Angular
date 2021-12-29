@@ -50,4 +50,12 @@ Ajouts Mobile
  * Couleurs choisies avec un contraste élevé pour tout distinguer sans problème.
  * Ajout de balises title et alt sur chaque textes et images
 * Facilité de maintenance (composants réutilisés, variables css stockées, arborescance du projet)
-* Réduction de la taille des images (webp) et lazy loading
+* Réduction de la taille des images (webp) et app spliting pour éviter la conception au monolithe, permettant **d'améliorer la vitesse et l'UX**
+
+Ce qu'on aurait pu ajouter
+---
+* *Lazy loading* : Nous ne l'avons pas implémenté au vue de la simplicité de l'application actuelle. Dans le cas d'une plus grande application et des modules différents, nous l'aurions implémenté.
+* *PWA* : l'application étant mobile first, nous aurions pu développer une PWA afin de permettre à l'utilisateur d'installer l'application web pour améliorer l'UX
+* *Mode sombre*
+* *Worker* : Si l'application était plus développée, et en PWA, nous aurions pu implémenter un Worker pour le choix des données affichées à l'utilisateur.
+* *Système de cache*
