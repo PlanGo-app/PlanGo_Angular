@@ -1,6 +1,6 @@
 <div class="container">
 
-    <img src="../../assets/img/plango.webp"><br>
+    <img alt="logo Plango" src="../../assets/img/plango.webp"><br>
 
     <div class="container-voyage">
         <div *ngIf="displayState.loaded && travels.length!=0" class="travel_list">
@@ -13,7 +13,7 @@
             </div>
 
         </div>
-        <div *ngIf="displayState.loaded  && travels.length==0" class="travel_list">
+        <div *ngIf="displayState.loaded && travels.length==0" class="travel_list">
             <span title="Vous ne possédez aucun voyage">Vous ne possédez pas de voyage</span>
         </div>
         <div *ngIf="displayState.loading" class="travel_list loading">
