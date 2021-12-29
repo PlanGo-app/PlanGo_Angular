@@ -8,13 +8,13 @@
                 <div><span>{{travel.city}} ( {{travel.country}} )</span><br>
                     <span>{{travel.dateStart | date: 'dd/MM/yyyy'}} -> {{travel.dateEnd | date: 'dd/MM/yyyy'}}</span>
                 </div>
-                <mat-icon (click)="delete(travel)">delete</mat-icon>
-                <mat-icon [routerLink]="['/share', travel.invitationCode]">share</mat-icon>
+                <mat-icon alt="Supprimer le voyage" (click)="delete(travel)">delete</mat-icon>
+                <mat-icon alt="Partager le voyage" [routerLink]="['/share', travel.invitationCode]">share</mat-icon>
             </div>
 
         </div>
         <div *ngIf="displayState.loaded  && travels.length==0" class="travel_list">
-            <span>Vous ne possédez pas de voyage</span>
+            <span title="Vous ne possédez aucun voyage">Vous ne possédez pas de voyage</span>
         </div>
         <div *ngIf="displayState.loading" class="travel_list loading">
             <div class="travel_item loading">
@@ -27,7 +27,7 @@
                 <div><span></span><br>
                     <span></span>
                 </div>
-                <mat-icon class="loading">share</mat-icon>
+                <mat-icon alt="Chargement..." class="loading">share</mat-icon>
             </div>
             <div class="loading-indicator">
                 <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
@@ -37,6 +37,6 @@
     </div>
 
     <button mat-fab [ngClass]="{'loading':displayState.loading}">
-    	<mat-icon [ngClass]="{'loading':displayState.loading}"  (click)="displayState.loading ||add()">add_circle</mat-icon>
+    	<mat-icon alt="Ajoutez un voyage" [ngClass]="{'loading':displayState.loading}"  (click)="displayState.loading ||add()">add_circle</mat-icon>
     </button>
 </div>

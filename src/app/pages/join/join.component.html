@@ -1,11 +1,11 @@
 <div class="flex-container">
     <img src="../../assets/img/plango.webp"><br>
-    <label for="code-field">Code du voyage à rejoindre :</label>
+    <label for="code-field" title="Code du voyage à rejoindre">Code du voyage à rejoindre :</label>
     <div class="code-field">
         <input name="code-field" type="text" [(ngModel)]="invitationCode" />
     </div>
     <div class="container-buttons primary-buttons">
-        <button [routerLink]="['/']">Annuler</button>
-        <button (click)="join()">Rejoindre</button>
+        <button [routerLink]="['/']" title="Annuler, retour à la page principale">Annuler</button>
+        <button (click)="join()" title="Rejoindre le voyage">Rejoindre</button>
     </div>
 </div>

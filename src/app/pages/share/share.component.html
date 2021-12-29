@@ -1,16 +1,16 @@
 <div class="flex-container">
     <img src="../../assets/img/plango.webp"><br>
 
-    <label for="copy-field">Votre code plango :</label>
+    <label for="copy-field" title="Votre code plango ci-dessous">Votre code plango :</label>
     <div class="copy-code-field">
         <input name="copy-field" type="text" disabled [value]="invitationCode" />
         <input type="button" (click)="copyInvitationCode()" />
     </div>
     <div class="container-buttons primary-buttons">
-        <button [routerLink]="['/']">Annuler</button>
-        <button>Envoyer le lien</button>
+        <button [routerLink]="['/']" title="Annuler, retour à la page principale">Annuler</button>
+        <button title="Envoyer le lien Plango">Envoyer le lien</button>
     </div>
     <div class="copied" *ngIf="copied">
-        <span>Code copié !</span>
+        <span title="Le code Plango à été copié !">Code copié !</span>
     </div>
 </div>

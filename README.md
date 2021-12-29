@@ -41,5 +41,11 @@ Manuel d'installation
 Ajouts Mobile
 ---
 
-* Chargement des composants sur la liste pour les lentes connexion (voir a quoi ressemble l'application alors que les composants ne sont pas encore chargés)
-* 
+* Application en ligne via le lien : inchallah
+* Chargement des *composants* sur la liste pour les lentes connexion (voir a quoi ressemble l'application alors que les composants ne sont pas encore chargés)
+* Completement mobile, autant utilisable sur mobile que sur ordinateur
+* Données stockées en locale lors du premier chargement (pour la liste des voyages), permettant de ne pas avoir à rechercher les données dans l'api au prochain chargement
+* Utilisation de Angular Material vu en cours
+* Gestion de l'accessibilité pour personnes malvoyantes :
+ * Couleurs choisies avec un contraste élevé pour tout distinguer sans problème.
+ * Ajout de balises title et alt sur chaque textes et images
