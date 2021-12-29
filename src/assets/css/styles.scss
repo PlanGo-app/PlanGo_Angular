@@ -32,3 +32,14 @@ img {
         width: 80%;
     }
 }
+
+::ng-deep .red-snackbar {
+    background: red;
+    color: white;
+}
+
+::ng-deep .red-snackbar button {
+    background-color: red;
+    color: white !important;
+    border: none;
+}

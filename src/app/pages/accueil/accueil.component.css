@@ -68,14 +68,3 @@ mat-icon.loading {
     margin-right: 10px;
     cursor: pointer;
 }
-
-::ng-deep .red-snackbar {
-    background: red;
-    color: white;
-}
-
-::ng-deep .red-snackbar button {
-    background-color: red;
-    color: white !important;
-    border: none;
-}

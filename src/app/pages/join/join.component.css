@@ -41,10 +41,3 @@ label {
     height: 3em;
     margin: 1em;
 }
-
-.errorMsg {
-    position: absolute;
-    top: 40%;
-    color: red;
-    text-align: center;
-}

@@ -4,7 +4,6 @@
     <div class="code-field">
         <input name="code-field" type="text" [(ngModel)]="invitationCode" />
     </div>
-    <div *ngIf="errorMsg" class="errorMsg">{{errorMsg}}</div>
     <div class="container-buttons primary-buttons">
         <button [routerLink]="['/']">Annuler</button>
         <button (click)="join()">Rejoindre</button>
