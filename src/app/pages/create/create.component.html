@@ -1,13 +1,19 @@
 <div class="flex-container">
     <img src="../../assets/img/plango.webp"><br>
-    <div style="display: inline-grid;">
-        <form [formGroup]="formCreate">
-            <input type="text" formControlName="country">
-            <input type="text" formControlName="city">
-            <input type="text" formControlName="dateStart">
-            <input type="text" formControlName="dateEnd">
-        </form>
-    </div>
+    <form [formGroup]="formCreate">
+        <label for="code-field" title="Pays">Pays :</label>
+        <input name="country" type="text" formControlName="country">
+
+        <label for="code-field" title="Ville">Ville :</label>
+        <input name="city" type="text" formControlName="city">
+
+        <label for="code-field" title="Date de début">Date de début :</label>
+        <input name="dateStart" type="text" formControlName="dateStart">
+
+        <label for="code-field" title="Date de fin">Date de fin :</label>
+        <input name="dateEnd" type="text" formControlName="dateEnd">
+    </form>
+    <span class="error" *ngIf="formCreate.invalid && dispError">Tous les champs sont obligatoires.</span>
 
     <div class="container-buttons primary-buttons">
         <button form="formCreate" [routerLink]="['/']" title="Annuler, retour à la page principale">Annuler</button>

@@ -12,10 +12,7 @@ import { Travel } from 'src/model/travel';
 	styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-	country: string = "";
-	city: string = "";
-	dateStart: Date = new Date();
-	dateEnd: Date = new Date();
+	dispError: boolean = false;
 
 
 	constructor(private travelService: TravelService, 
@@ -36,30 +33,31 @@ export class CreateComponent implements OnInit {
 	}
 
 	createTravel() {
-		console.log(this.formCreate.valid);
 		if(!this.formCreate.valid){
+			this.dispError = true;
 			this.formCreate.markAllAsTouched();
 			this.formCreate.markAsPristine();
+		}else{
+			this.travelService.createTravel(this.formCreate.value.country, 
+											this.formCreate.value.city, 
+											this.formCreate.value.dateStart, 
+											this.formCreate.value.dateEnd).subscribe({
+				next: (data) => {
+					console.log(data);
+					this.localTravelService.addTravel(data);
+				},
+				error: (err: HttpErrorResponse) => {
+					var errMsg = "";
+					switch (err.status) {
+						case 400:
+							errMsg = "Les informations données ne permettent pas de créer un voyage";
+							break;
+					}
+					this._snackBar.open(errMsg,"Ok", {duration: 3000, panelClass: ['red-snackbar']});
+	
+				}
+			});
 		}
-		
-		console.log("create");
-		
-		// if (this.country != "")
-		// 	this.travelService.createTravel(this.country, this.city, this.dateStart, this.dateEnd).subscribe({
-		// 		next: (data) => {
-		// 			console.log(data);
-		// 			this.localTravelService.addTravel(data);
-		// 		},
-		// 		error: (err: HttpErrorResponse) => {
-		// 			var errMsg = "";
-		// 			switch (err.status) {
-		// 				case 400:
-		// 					errMsg = "Les informations données ne permettent pas de créer un voyage";
-		// 					break;
-		// 			}
-		// 			this._snackBar.open(errMsg,"Ok", {duration: 3000, panelClass: ['red-snackbar']});
-
-		// 		}
-		// 	});
+					
 	}
 }

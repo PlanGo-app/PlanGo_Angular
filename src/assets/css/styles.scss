@@ -35,6 +35,10 @@ body {
     margin: 1em;
 }
 
+.error {
+    color: red;
+}
+
 input.ng-touched.ng-invalid {
     border: 1px solid red;
 }
