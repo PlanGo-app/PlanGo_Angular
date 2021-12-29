@@ -41,12 +41,26 @@ export class CreateComponent implements OnInit {
 		return (group: FormGroup): { [key: string]: any } => {
 			let f = group.controls[from];
 			let t = group.controls[to];
+			console.log(f.value);
 			if (f.value > t.value) {
 				t.setErrors({ 'date_incorrect': true });
 				f.setErrors({ 'date_incorrect': true });
 				return {
 					dates: "La date de fin doit être superieur à la date de début"
 				};
+			}
+			if(!f.value || !t.value){
+				t.setErrors({ 'date_incorrect': true });
+				f.setErrors({ 'date_incorrect': true });
+					return{
+					};
+			}
+			if(f.value.split("-")[0] < 2010 || t.value.split("-")[0] < 2010){
+				t.setErrors({ 'date_incorrect': true });
+				f.setErrors({ 'date_incorrect': true });
+					return{
+						dates: "Les dates doivent être superieures à 2010"
+					};
 			}
 			if (f.value)
 				f.setErrors(null);

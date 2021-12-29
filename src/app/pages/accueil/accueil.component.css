@@ -41,7 +41,7 @@ mat-icon.loading {
 
 .container-travel {
     height: 55%;
-    overflow-y: scroll;
+    overflow-y: auto;
     width: 85%;
     margin: auto;
     border: 1px solid var(--color-primary);
