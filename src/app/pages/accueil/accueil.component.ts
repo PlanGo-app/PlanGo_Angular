@@ -60,11 +60,6 @@ export class AccueilComponent implements OnInit {
 
 	}
 
-	share() {
-		console.log("SHARE");
-	}
-
-
 	add() {
 		this._bottomSheet.open(BottomSheetComponent, { data: this._bottomSheet });
 	}

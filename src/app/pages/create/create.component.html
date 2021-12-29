@@ -1,0 +1,24 @@
+<div class="flex-container">
+    <img src="../../assets/img/plango.webp"><br>
+    <label for="code-field">Pays :</label>
+    <div class="code-field">
+        <input name="code-field" type="text" [(ngModel)]="country" />
+    </div>
+    <label for="code-field">Ville :</label>
+    <div class="code-field">
+        <input name="code-field" type="text" [(ngModel)]="city" />
+    </div>
+    <label for="code-field">Date de debut :</label>
+    <div class="code-field">
+        <input name="code-field" type="date" [(ngModel)]="dateStart" />
+    </div>
+    <label for="code-field">Date de fin :</label>
+    <div class="code-field">
+        <input name="code-field" type="date" [(ngModel)]="dateEnd" [min]="dateStart" />
+    </div>
+    <!-- <div *ngIf="errorMsg" class="errorMsg">{{errorMsg}}</div> -->
+    <div class="container-buttons primary-buttons">
+        <button [routerLink]="['/']">Annuler</button>
+        <button (click)="createTravel()">Créer </button>
+    </div>
+</div>

@@ -21,6 +21,7 @@ import { ShareComponent } from './pages/share/share.component';
 import {ClipboardModule} from '@angular/cdk/clipboard';
 import { JoinComponent } from './pages/join/join.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { CreateComponent } from './pages/create/create.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 		BottomSheetComponent,
 		ShareComponent,
   JoinComponent,
+  CreateComponent,
 	],
 	imports: [
 		BrowserModule,
