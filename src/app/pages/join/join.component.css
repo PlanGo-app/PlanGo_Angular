@@ -1,11 +1,4 @@
 @import url(../../../assets/css/styles.scss);
-.flex-container {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    align-items: center;
-}
-
 label {
     color: var(--color-secondary);
 }

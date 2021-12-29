@@ -13,8 +13,6 @@ button {
     justify-content: space-around;
 }
 
-.travel_interraction>button {}
-
 .dismiss_bottom_sheet {
     display: flex;
     justify-content: center;
