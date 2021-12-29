@@ -1,27 +1,45 @@
-# PlanGoAngular
+Technologie Mobile
+===
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
+Groupe
+---
 
-## Development server
+Nous avons gardé le même groupe que pour le projet platine, à savoir
+* Gaël Bricout (gael.bricout.etu@univ-lille.fr)
+* Annelise Carlier (annelise.carlier.etu@univ-lille.fr)
+* Anthony Lafolie (anthony.lafolie.etu@univ-lille.fr)
+* Anthony Mendez (anthony.mendez.etu@univ-lille.fr)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Thème projet platine
+---
+L'idée de notre projet platine est d'aider à la création de voyages en groupe. Nos principales fonctionnalités étaient une carte partagée sur laquelle l'utilisateur ajoute un "pin" qui permet de notifier aux autres membres du groupe l'activité qu'il veut faire (voir ci-dessous).
+![screen_map](src/assets/img/screen2.jpg)
 
-## Code scaffolding
+Ensuite, les activités sont répertoriées dans un calendrier partagé, sur lequel les utilisateurs peuvent organiser leur voyage (voir ci-dessous).
+![screen_map](src/assets/img/screen1.jpg)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Sujet
+---
 
-## Build
+Le but ici est de créer une partie de l'application faite au projet platine. <br>
+Nous avons décidé de reproduire l'étape de création et de partage de voyage en Angular, car nous avions fait notre projet en Flutter. Nous avons également choisi de garder le même environnement Back-end.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+<br><br>
 
-## Running unit tests
+Voici les screenshot de cette partie sur l'application flutter:
+![screen_map](src/assets/img/screen_list.jpg)
+La liste de voyage
+![screen_map](src/assets/img/screen_create.jpg)
+La création d'un voyage
+![screen_map](src/assets/img/screen_share.jpg)
+Le partage d'un voyage
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Manuel d'installation
+---
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Ajouts Mobile
+---
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* Chargement des composants sur la liste pour les lentes connexion (voir a quoi ressemble l'application alors que les composants ne sont pas encore chargés)
+* 

@@ -30,7 +30,7 @@ export class LocalTravelService {
 
 
 	deleteTravel(travel: any) {
-		this.travelList.splice(this.travelList.findIndex(x=> x.id == travel), 1);
+		this.travelList.splice(this.travelList.findIndex(x=> x.id == travel.id), 1);
 		return this.update();
 	}
 
