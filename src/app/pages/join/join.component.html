@@ -1,9 +1,12 @@
 <div class="flex-container">
     <img src="../../assets/img/plango.webp"><br>
-    <label for="code-field" title="Code du voyage à rejoindre">Code du voyage à rejoindre :</label>
-    <div class="code-field">
-        <input name="code-field" type="text" [(ngModel)]="invitationCode" />
-    </div>
+
+    <form [formGroup]="formCreate">
+        <label for="code-field" title="Code du voyage à rejoindre">Code du voyage à rejoindre :</label>
+        <input name="code" type="text" formControlName="code">
+    </form>
+    <span class="error" *ngIf="formCreate.invalid && dispError">Veuillez indiquer le code du voyage.</span>
+
     <div class="container-buttons primary-buttons">
         <button [routerLink]="['/']" title="Annuler, retour à la page principale">Annuler</button>
         <button (click)="join()" title="Rejoindre le voyage">Rejoindre</button>
