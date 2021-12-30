@@ -3,6 +3,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { LocalTravelService } from 'src/app/services/travel-service/local-travel-service.component';
 import { TravelService } from 'src/app/services/travel-service/travel-service.component';
 import { Travel } from 'src/model/travel';
@@ -19,6 +20,7 @@ export class CreateComponent implements OnInit {
 	constructor(private travelService: TravelService,
 		private localTravelService: LocalTravelService,
 		private _snackBar: MatSnackBar,
+		private router: Router,
 		public formBuilder: FormBuilder) { }
 
 	public formCreate!: FormGroup;
@@ -65,8 +67,8 @@ export class CreateComponent implements OnInit {
 				this.formCreate.value.dateStart,
 				this.formCreate.value.dateEnd).subscribe({
 					next: (data) => {
-						console.log(data);
 						this.localTravelService.addTravel(data);
+						this.router.navigateByUrl("/");
 					},
 					error: (err: HttpErrorResponse) => {
 						var errMsg = "";
