@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LocalTravelService } from 'src/app/services/travel-service/local-travel-service.component';
 import { TravelService } from 'src/app/services/travel-service/travel-service.component';
@@ -39,14 +40,16 @@ export class CreateComponent implements OnInit {
 			let f = group.controls[from];
 			let t = group.controls[to];
 			if (f.value > t.value) {
-				t.setErrors({ 'incorrect': true });
-				f.setErrors({ 'incorrect': true });
+				t.setErrors({ 'date_incorrect': true });
+				f.setErrors({ 'date_incorrect': true });
 				return {
 					dates: "La date de fin doit être superieur à la date de début"
 				};
 			}
-			t.setErrors(null);
-			f.setErrors(null);
+			if (f.value)
+				f.setErrors(null);
+			if (t.value)
+				t.setErrors(null);
 			return {};
 		}
 	}
@@ -57,7 +60,6 @@ export class CreateComponent implements OnInit {
 			this.formCreate.markAllAsTouched();
 			this.formCreate.markAsPristine();
 		} else {
-
 			this.travelService.createTravel(this.formCreate.value.country,
 				this.formCreate.value.city,
 				this.formCreate.value.dateStart,
