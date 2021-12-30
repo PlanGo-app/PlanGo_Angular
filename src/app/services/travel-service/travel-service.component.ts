@@ -16,13 +16,18 @@ export class TravelService {
 	private deleteTravelUrl: string = "travel/";
 	private createTravelUrl: string = "travel";
 	private token: string = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJQbGFuZ29Bbmd1bGFyIiwiaWF0IjoxNjM5MTQ4OTQxfQ.sSondsM8XuMajf6mpLnHPsFwgt9sJQqugKQ0Or_1Kp2meGkAV3Bq_jREjGI6K2QjsTNEdV_ryfLCQ2-Ldw7e2Q";
-	private httpOptions = {
+	private httpPostOptions = {
 		headers: new HttpHeaders({
 		  'Content-Type':  'application/json',
 		  'Authorization': `Bearer ${this.token}`
 		})
 	  };
-
+	private httpOptions = {
+	headers: new HttpHeaders({
+		'Content-Type':  'application/json',
+		'Authorization': `Bearer ${this.token}`
+	})
+	};
 
 	getTravels(): Observable<Travel[]> {
 		return this.http.get<TravelResponse>(this.baseUrl + this.getTravelsUrl, this.httpOptions).pipe(
@@ -30,7 +35,7 @@ export class TravelService {
 	}
 
 	joinTravel(code: string): Observable<Travel> {
-		return this.http.post<Travel>(this.baseUrl + this.joinTravelUrl + code, "", this.httpOptions);
+		return this.http.post<Travel>(this.baseUrl + this.joinTravelUrl + code, "", this.httpPostOptions);
 	}
 
 	deleteTravel(id: number): Observable<unknown> {
@@ -47,7 +52,7 @@ export class TravelService {
 					"dateStart": new Date(dateStart).toISOString(),
 					"dateEnd": new Date(dateEnd).toISOString() 
 				},
-				this.httpOptions
+				this.httpPostOptions
 			);
 	}
 
