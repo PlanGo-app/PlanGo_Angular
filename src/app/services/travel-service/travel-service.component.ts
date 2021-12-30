@@ -23,7 +23,7 @@ export class TravelService {
 		})
 	  };
 	private httpDeleteOptions = {
-		responeType: 'text',
+		responseType: 'text',
 		headers: new HttpHeaders({
 			'Authorization': `Bearer ${this.token}`
 		})
@@ -43,8 +43,15 @@ export class TravelService {
 		return this.http.post<Travel>(this.baseUrl + this.joinTravelUrl + code, "", this.httpPostOptions);
 	}
 
-	deleteTravel(id: number): Observable<unknown> {
-		return this.http.delete(this.baseUrl + this.deleteTravelUrl + id + "/me", this.httpDeleteOptions);
+	deleteTravel(id: number): Observable<String> {
+		return this.http.delete(this.baseUrl + this.deleteTravelUrl + id + "/me", 
+		{ 
+			responseType: 'text',
+			headers: new HttpHeaders({
+				'Authorization': `Bearer ${this.token}`
+			})
+		}
+		);
 	}
 
 	createTravel(country: string, city: string, dateStart: Date, dateEnd: Date): Observable<Travel> {
