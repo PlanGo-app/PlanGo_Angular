@@ -70,3 +70,7 @@ mat-icon.loading {
     margin-right: 10px;
     cursor: pointer;
 }
+
+.add_button {
+    color:white;
+}
