@@ -22,14 +22,20 @@ export class TravelService {
 		  'Authorization': `Bearer ${this.token}`
 		})
 	  };
-	private httpOptions = {
-	headers: new HttpHeaders({
-		'Authorization': `Bearer ${this.token}`
-	})
+	private httpDeleteOptions = {
+		responeType: 'text',
+		headers: new HttpHeaders({
+			'Authorization': `Bearer ${this.token}`
+		})
+	};
+	private httpGetOptions = {
+		headers: new HttpHeaders({
+			'Authorization': `Bearer ${this.token}`
+		})
 	};
 
 	getTravels(): Observable<Travel[]> {
-		return this.http.get<TravelResponse>(this.baseUrl + this.getTravelsUrl, this.httpOptions).pipe(
+		return this.http.get<TravelResponse>(this.baseUrl + this.getTravelsUrl, this.httpGetOptions).pipe(
 			map((response) => response.travels));
 	}
 
@@ -38,7 +44,7 @@ export class TravelService {
 	}
 
 	deleteTravel(id: number): Observable<unknown> {
-		return this.http.delete(this.baseUrl + this.deleteTravelUrl + id + "/me", this.httpOptions);
+		return this.http.delete(this.baseUrl + this.deleteTravelUrl + id + "/me", this.httpDeleteOptions);
 	}
 
 	createTravel(country: string, city: string, dateStart: Date, dateEnd: Date): Observable<Travel> {
