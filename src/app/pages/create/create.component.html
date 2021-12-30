@@ -1,16 +1,16 @@
 <div class="flex-container">
     <img src="../../assets/img/plango.webp"><br>
     <form [formGroup]="formCreate">
-        <label for="code-field" title="Pays">Pays :</label>
+        <label for="country" title="Pays">Pays :</label>
         <input name="country" type="text" formControlName="country">
 
-        <label for="code-field" title="Ville">Ville :</label>
+        <label for="city" title="Ville">Ville :</label>
         <input name="city" type="text" formControlName="city">
 
-        <label for="code-field" title="Date de début">Date de début :</label>
+        <label for="dateStart" title="Date de début">Date de début :</label>
         <input name="dateStart" type="date" formControlName="dateStart">
 
-        <label for="code-field" title="Date de fin">Date de fin :</label>
+        <label for="dateStart" title="Date de fin">Date de fin :</label>
         <input name="dateEnd" type="date" formControlName="dateEnd">
     </form>
     <span class="error" *ngIf="formCreate.invalid && dispError">Tous les champs sont obligatoires.</span>
