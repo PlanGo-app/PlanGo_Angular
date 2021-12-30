@@ -2,12 +2,13 @@
   "name": "plan-go-angular",
   "version": "0.0.0",
   "scripts": {
+    "start" : "node server.js",
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -22,10 +23,12 @@
     "@angular/platform-browser-dynamic": "~11.2.5",
     "@angular/router": "~11.2.5",
     "@syncfusion/ej2-angular-maps": "^19.3.44",
+    "express": "^4.17.2",
     "lottie-web": "^5.8.1",
     "ng-material-multilevel-menu": "^5.5.3",
     "ng-swipe-to-delete": "^1.0.3",
     "ngx-lottie": "^8.0.1",
+    "path": "^0.12.7",
     "rxjs": "~6.6.0",
     "swipe-angular-list": "^1.0.6",
     "tslib": "^2.0.0",
@@ -49,5 +52,9 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.1.5"
+  },
+  "engines": { 
+    "node": "14.17.6",
+    "npm": "6.14.15" 
   }
 }
