@@ -24,7 +24,6 @@ export class TravelService {
 	  };
 	private httpOptions = {
 	headers: new HttpHeaders({
-		'Content-Type':  'application/json',
 		'Authorization': `Bearer ${this.token}`
 	})
 	};
