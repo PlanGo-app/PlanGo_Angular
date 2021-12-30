@@ -8,34 +8,15 @@
         <input name="city" type="text" formControlName="city">
 
         <label for="code-field" title="Date de début">Date de début :</label>
-        <input name="dateStart" type="text" formControlName="dateStart">
+        <input name="dateStart" type="date" formControlName="dateStart">
 
         <label for="code-field" title="Date de fin">Date de fin :</label>
-        <input name="dateEnd" type="text" formControlName="dateEnd">
+        <input name="dateEnd" type="date" formControlName="dateEnd">
     </form>
     <span class="error" *ngIf="formCreate.invalid && dispError">Tous les champs sont obligatoires.</span>
-
+    <span class="error" *ngIf="formCreate.errors">{{ formCreate.errors?.dates }}</span>
     <div class="container-buttons primary-buttons">
         <button form="formCreate" [routerLink]="['/']" title="Annuler, retour à la page principale">Annuler</button>
         <button (click)="createTravel()" title="Créer le voyage">Créer </button>
     </div>
-
-    <!-- <label for="code-field" title="Pays">Pays :</label>
-    <div class="code-field">
-        <input name="code-field" type="text" [(ngModel)]="country" />
-    </div>
-    <label for="code-field" title="Ville">Ville :</label>
-    <div class="code-field">
-        <input name="code-field" type="text" [(ngModel)]="city" />
-    </div>
-    <label for="code-field" title="Date de début">Date de debut :</label>
-    <div class="code-field">
-        <input name="code-field" type="date" [(ngModel)]="dateStart" />
-    </div>
-    <label for="code-field" title="Date de fin">Date de fin :</label>
-    <div class="code-field">
-        <input name="code-field" type="date" [(ngModel)]="dateEnd" [min]="dateStart" />
-    </div> -->
-    <!-- <div *ngIf="errorMsg" class="errorMsg">{{errorMsg}}</div> -->
-
 </div>
