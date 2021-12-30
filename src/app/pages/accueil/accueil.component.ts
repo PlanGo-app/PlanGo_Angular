@@ -78,6 +78,8 @@ export class AccueilComponent implements OnInit {
 					case 404:
 						errMsg = 'Le voyage que vous essayer de supprimer n\'existe pas';
 						break;
+					default:
+						errMsg = 'Erreur lors de la suppression du voyage. Code:' + err.status;
 				}
 				this._snackBar.open(errMsg,"Ok", {duration: 3000, panelClass: ['red-snackbar']});
 			},
