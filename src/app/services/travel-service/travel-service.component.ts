@@ -11,7 +11,7 @@ export class TravelService {
 	constructor(private http: HttpClient) { }
 
 	private baseUrl: string = "https://plango-api.herokuapp.com/";
-	private getTravelsUrl: string = "user/travels/";
+	private getTravelsUrl: string = "user/travels";
 	private joinTravelUrl: string = "travel/invitation?code=";
 	private deleteTravelUrl: string = "travel/";
 	private createTravelUrl: string = "travel";
