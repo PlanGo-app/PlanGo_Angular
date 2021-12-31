@@ -27,6 +27,10 @@ Nous avons décidé de reproduire l'étape de création et de partage de voyage 
 
 <br><br>
 
+Nous n'avons pas utilisé d'API externe au projet dans cette version. Certaines fonctionnalités sont donc moins dynamiques et sécurisées, comme par exemple le choix de ville et de pays qui sont libres pour l'utilisateur.
+
+<br><br>
+
 Voici les screenshot de cette partie sur l'application flutter:
 <div align=center>
   <img align=top src="src/assets/img/screen_list.jpg" alt="Liste de voyage" style="width:300px;margin:10px;"/>
