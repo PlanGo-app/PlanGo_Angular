@@ -12,27 +12,27 @@ Nous avons gardé le même groupe que pour le projet platine, à savoir
 
 Thème projet platine
 ---
-L'idée de notre projet platine est d'aider à la création de voyages en groupe. Nos principales fonctionnalités étaient une carte partagée sur laquelle l'utilisateur ajoute un "pin" qui permet de notifier aux autres membres du groupe l'activité qu'il veut faire (voir ci-dessous).
-![screen_map](src/assets/img/screen2.jpg)
-
-Ensuite, les activités sont répertoriées dans un calendrier partagé, sur lequel les utilisateurs peuvent organiser leur voyage (voir ci-dessous).
-![screen_map](src/assets/img/screen1.jpg)
+L'idée de notre projet platine est d'aider à la création de voyages en groupe. Nos principales fonctionnalités étaient une carte partagée sur laquelle l'utilisateur ajoute un "pin" qui permet de notifier aux autres membres du groupe l'activité qu'il veut faire.
+Ensuite, les activités sont répertoriées dans un calendrier partagé, sur lequel les utilisateurs peuvent organiser leur voyage.
+<div align=center>
+  <img align=top src="src/assets/img/screen2.jpg" alt="Maquette carte" style="width:300px;margin:10px;"/>
+  <img align=top src="src/assets/img/screen1.jpg" alt="Maquette calendrier" style="width:300px;margin:10px:"/>
+</div>
 
 Sujet
 ---
 
-Le but ici est de créer une partie de l'application faite au projet platine. <br>
+Le but ici est de créer une partie de l'application faite dans le projet platine. <br>
 Nous avons décidé de reproduire l'étape de création et de partage de voyage en Angular, car nous avions fait notre projet en Flutter. Nous avons également choisi de garder le même environnement Back-end.
 
 <br><br>
 
 Voici les screenshot de cette partie sur l'application flutter:
-![screen_map](src/assets/img/screen_list.jpg)
-La liste de voyage
-![screen_map](src/assets/img/screen_create.jpg)
-La création d'un voyage
-![screen_map](src/assets/img/screen_share.jpg)
-Le partage d'un voyage
+<div align=center>
+  <img align=top src="src/assets/img/screen_list.jpg" alt="Liste de voyage" style="width:300px;margin:10px;"/>
+  <img align=top src="src/assets/img/screen_create.jpg" alt="Création de voyage" style="width:300px;margin:10px:"/>
+  <img align=top src="src/assets/img/screen_share.jpg" alt="Partage de voyage" style="width:300px;margin:10px;"/>
+</div>
 
 Manuel d'installation
 ---
@@ -41,8 +41,8 @@ Manuel d'installation
 Ajouts Mobile
 ---
 
-* Application en ligne via le lien : inchallah
-* Chargement des *composants* sur la liste pour les lentes connexion (voir a quoi ressemble l'application alors que les composants ne sont pas encore chargés) : **Fonctionne hors ligne**
+* Application en ligne via le lien : https://plango-application.herokuapp.com/accueil
+* Chargement des *composants* sur la liste pour les connexions lentes (voir ce à quoi ressemble l'application alors que les composants ne sont pas encore chargés) : **Fonctionne hors ligne**
 * Completement mobile, autant utilisable sur mobile que sur ordinateur
 * Données stockées en locale lors du premier chargement (pour la liste des voyages), permettant de ne pas avoir à rechercher les données dans l'api au prochain chargement : **Fonctionne hors ligne**
 * Utilisation de Angular Material vu en cours
