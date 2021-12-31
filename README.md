@@ -37,6 +37,15 @@ Voici les screenshot de cette partie sur l'application flutter:
 Manuel d'installation
 ---
 
+* Utiliser le site web : https://plango-application.herokuapp.com/accueil
+* En local :
+ * Prérequis : avoir node, npm à jour.
+ * Cloner le repository ici présent
+ * Ouvrir un terminal de commande
+ * Se placer à la racine du projet
+ * Lancer la commande *npm i*
+ * Lancer la commande *ng s*
+ * Ouvrir un moteur de recherche, avec le lien http://localhost:4200/
 
 Ajouts Mobile
 ---
