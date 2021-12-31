@@ -15,6 +15,7 @@ import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
 export class AccueilComponent implements OnInit {
 	travels: Travel[] = [];
 	displayState: any;
+	loading: boolean = false;
 
 	constructor(private travelService: TravelService, private localTravelService: LocalTravelService, private _bottomSheet: MatBottomSheet,private _snackBar: MatSnackBar) { }
 
@@ -65,11 +66,14 @@ export class AccueilComponent implements OnInit {
 	}
 
 	delete(travel:Travel) {
+		this.loading = true;
 		this.travelService.deleteTravel(travel.id).subscribe({
 			next:() =>{
+				this.loading = false;
 				this.travels = this.localTravelService.deleteTravel(travel);
 			},
 			error:(err:HttpErrorResponse) =>{
+				this.loading = false;
 				var errMsg="";
 				switch(err.status){
 					case 403:

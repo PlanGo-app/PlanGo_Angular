@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { BrowserModule, HammerModule } from '@angular/platform-browser';
-
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,7 +23,10 @@ import {ClipboardModule} from '@angular/cdk/clipboard';
 import { JoinComponent } from './pages/join/join.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { CreateComponent } from './pages/create/create.component';
-
+import { LoadingComponent } from './pages/loading/loading.component';
+export function playerFactory() {
+	return player;
+  }
 
 @NgModule({
 	declarations: [
@@ -32,10 +36,12 @@ import { CreateComponent } from './pages/create/create.component';
 		ShareComponent,
   JoinComponent,
   CreateComponent,
+  LoadingComponent,
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
+		[LottieModule.forRoot({ player: playerFactory })],
 		BrowserAnimationsModule,
 		MatFormFieldModule,
 		MatInputModule,
@@ -52,6 +58,7 @@ import { CreateComponent } from './pages/create/create.component';
 		MatSnackBarModule
 	],
 	providers: [TravelService],
-	bootstrap: [AppComponent]
+	bootstrap: [AppComponent],
+	schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

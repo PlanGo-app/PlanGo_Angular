@@ -15,7 +15,7 @@ import { Travel } from 'src/model/travel';
 })
 export class CreateComponent implements OnInit {
 	dispError: boolean = false;
-
+	loading = false;
 
 	constructor(private travelService: TravelService,
 		private localTravelService: LocalTravelService,
@@ -76,15 +76,18 @@ export class CreateComponent implements OnInit {
 			this.formCreate.markAllAsTouched();
 			this.formCreate.markAsPristine();
 		} else {
+			this.loading = true;
 			this.travelService.createTravel(this.formCreate.value.country,
 				this.formCreate.value.city,
 				this.formCreate.value.dateStart,
 				this.formCreate.value.dateEnd).subscribe({
 					next: (data) => {
+						this.loading = false;
 						this.localTravelService.addTravel(data);
 						this.router.navigateByUrl("/");
 					},
 					error: (err: HttpErrorResponse) => {
+						this.loading = false;
 						var errMsg = "";
 						switch (err.status) {
 							case 400:
