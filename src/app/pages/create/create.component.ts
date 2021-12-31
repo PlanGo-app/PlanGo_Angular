@@ -93,6 +93,8 @@ export class CreateComponent implements OnInit {
 							case 400:
 								errMsg = "Les informations données ne permettent pas de créer un voyage";
 								break;
+							default:
+								errMsg = 'Erreur lors de la création du voyage. Code:' + err.status;
 						}
 						this._snackBar.open(errMsg, "Ok", { duration: 3000, panelClass: ['red-snackbar'] });
 

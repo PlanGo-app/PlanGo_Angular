@@ -14,6 +14,7 @@ import { TravelService } from 'src/app/services/travel-service/travel-service.co
 export class JoinComponent implements OnInit {
 	invitationCode: string = "";
 	errorMsg: string = "";
+	loading: boolean = false;
 	dispError: boolean = false;
 	constructor(private travelService: TravelService,
 		private localTravelService: LocalTravelService,
@@ -35,14 +36,17 @@ export class JoinComponent implements OnInit {
 			this.formCreate.markAllAsTouched();
 			this.formCreate.markAsPristine();
 		} else {
+			this.loading = true;
 			this.travelService.joinTravel(this.formCreate.value.code).subscribe({
 				next: (data) => {
-					console.log(data);
+					this.loading = false;
 					this.localTravelService.addTravel(data);
 					this.router.navigateByUrl("/");
 				},
 				error: (err: HttpErrorResponse) => {
 					var errMsg = "";
+					this.loading = false;
+
 					switch (err.status) {
 						case 404:
 							errMsg = "Le code de voyage n'existe pas";
@@ -50,6 +54,8 @@ export class JoinComponent implements OnInit {
 						case 409:
 							errMsg = "Vous êtes déjà dans ce voyage";
 							break;
+						default:
+							errMsg = 'Impossible de rejoindre le voyage. Code:' + err.status;
 					}
 					this._snackBar.open(errMsg, "Ok", { duration: 3000, panelClass: ['red-snackbar'] });
 				}
